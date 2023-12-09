@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@900&display=swap');
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+body{
+   background-color: #f0f0f0;
+   font-family: 'Heebo', sans-serif;
+   position: absolute;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100vw;
+   height: 100vh;
+}
+.container{
+   position: relative;  
+   width: 45em;
+   height: 30em;
+   background-color: white;
+   padding: 3em;
+   border-radius: 15px 15px 150px 15px;
+}
+.user-age{
+   display: flex;
+   justify-content: space-between;
+   width: 22em;
+   font-size: 1.5em;
+   padding-bottom: 2em;
+}
+.user-age p{
+   font-size: 0.7em;
+   color: gray;
+}
+.user-age input{
+   font-weight: 800;
+   font-size: 0.9em;
+   width: 7.5em;
+   height: 3em;
+   padding-left: 1.5em;
+   border: 1px solid gray;
+   border-radius: 5px
+}
+#icon{
+   width: 4em;
+   height: 4em;
+   background-color:blueviolet ;
+   border-radius: 50%;
+   position: absolute;
+   right: 2.5em;
+   top: 9.7em;
+   padding: .9em;
+}
+.output{
+   font-size: 4em;
+   font-style: italic;
+}
+.output div{
+   display: flex;
+}
+.output div p{
+   margin-right: 1em;
+}
+.output div p:first-child{
+   color: blueviolet;
+   font-size: 1em;
+}
+
+@media (max-width:425px){
+   .container{
+      width: 25em;
+      height: 25em;
+      padding: 2em;
+   }
+   .user-age{
+      font-size: 1em;
+   }
+   .output{
+      font-size: 2.5em;
+   }
+   #icon{
+      width: 3em;
+      height: 3em;
+      right: 2em;
+      top: 6.3em;
+   }
+}
+@media (max-width:320px){
+   .container{
+      width: 19em;
+      height: 18em;
+      padding: 1em;
+   }
+   .user-age{
+      font-size: .76em;
+   }
+   .output{
+      margin-top: 0.6em;
+      font-size: 2.3em;
+   }
+   #icon{
+      width: 2.7em;
+      height: 2.7em;
+      right: 8.5em;
+      top: 4em;
+   }
+}
