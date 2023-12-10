@@ -8,9 +8,14 @@ const yearOutput = document.querySelector(".userYears")
 
 const btn = document.querySelector("#icon");
 
+let todayString = new Date().toISOString().split("T")[0];
+
+let todayArray = todayString.split("-")
+
+
 const date = new Date();
 const [month, day, year] = [
-   date.getMonth(),
+   date.getMonth() + 1,
    date.getDate(),
    date.getFullYear(),
 ];
@@ -19,27 +24,45 @@ btn.addEventListener("click", ()=>{
    dayValue = userDayInput.value;
    monthValue = userMonthInput.value;
    yearValue = userYearInput.value;
-
    let para = document.createElement("p")
+   let unvalid = document.querySelectorAll(".unvalid")
+
+   let yearDif, monthDif, dayDif;
+
+   yearDif = year - yearValue;
+   monthDif = month - monthValue;
+   dayDif = day - dayValue;
+
+   let arrayToday = [userYearInput.value, userMonthInput.value, userDayInput.value]
+
+   console.log(arrayToday)
+   
 
    if(dayValue > 31){
-      para.textContent = "Must be a valid day"
-      userDayInput.parentElement.appendChild(para);
-      para.style.color = "red";
    } else if (monthValue > 12){
-      para.textContent = "Must be a valid month"
-      userMonthInput.parentElement.appendChild(para);
-      para.style.color = "red";
    } else if(yearValue > year){
-      para.textContent = "Must be in the past"
-      userYearInput.parentElement.appendChild(para);
-      para.style.color = "red";
    } else{
-      yearOutput.textContent = Number(year - yearValue);
-
-      dayOutput.textContent = Number(day -dayValue);
-      monthOutput.textContent = Number(month - monthValue);
+      if(dayDif < 1){
+         monthOutput.textContent = monthDif -1;
+         yearOutput.textContent = yearDif;
+         if(month === 4 || month === 6 || month === 9 || month === 11 ){
+            dayOutput.textContent =  dayDif + 30;
+         } else if(month === 2){
+            dayOutput.textContent = dayDif + 28;
+         } else{
+            dayOutput.textContent = dayDif + 31;
+         }
+      } else{ 
+         dayOutput.textContent =  dayDif;
+         monthOutput.textContent = monthDif;
+         yearOutput.textContent = yearDif;
+      }
    }
 
 })
-
+let ageDif = new Object();
+const [userMonth, userDay, userYear] = [
+   userMonthInput.value,
+   userDayInput.value,
+   userYearInput.value,
+];
