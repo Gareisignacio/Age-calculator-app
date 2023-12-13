@@ -1,48 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Age Calculator App</title>
-   <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-   <script defer src="app.js"></script>
+<link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+<title>Frontend Mentor | Age calculator app</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script defer src="app.js"></script>
+
 </head>
 <body>
-   <div class="container">
-      <div class="user-age">
-         <div >
-            <p>DAY</p>
-            <input id="day" type="number" min="1" max="31" placeholder="DD">
-            <p class="unvalid">Must be a valid day</p>
-         </div>
-         <div >
-            <p>MONTH</p>
-            <input id="month" type="number" min="1" max="12" placeholder="MM">
-            <p class="unvalid">Must be a valid Month</p>
-         </div>
-         <div >
-            <p>YEAR</p>
-            <input id="year" type="number" placeholder="YYYY">
-            <p class="unvalid">Must be in the past</p>
-         </div>
+<div class="container">
+   <div class="input-flex">
+      <div class="input-container">
+         <span>Day</span>
+         <input type="number"  id="day">
+         <small class="error-day"></small>
       </div>
-      <hr>
-      <img id="icon" src="assets/images/icon-arrow.svg">
-      <div class="output">
-         <div>
-            <p class="userYears">--</p>
-            <p>Years</p>
-         </div>
-         <div>
-            <p class="userMonths">--</p>
-            <p>Months</p>
-         </div>
-         <div>
-            <p class="userDays">--</p>
-            <p>Days</p>
-         </div>
+      <div class="input-container">
+         <span>Month</span>
+         <input type="number"  id="month">
+         <small class="error-month"></small>
+      </div>
+      <div class="input-container">
+         <span>Year</span>
+         <input type="number"  id="year">
+         <small class="error-year"></small>
       </div>
    </div>
+   <button class="submit-btn">
+      <img src="./assets/images/icon-arrow.svg" alt="">
+      </button>
+   <div class="output">
+      <h1><span class="output-year">--</span>years</h1>
+      <h1><span class="output-month">--</span>months</h1>
+      <h1><span class="output-day">--</span>days</h1>
+   </div>
+</div>
+
 </body>
 </html>
